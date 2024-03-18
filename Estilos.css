@@ -1,44 +1,82 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	min-height: 100%;
+}
+
 body {
        font-family: Arial, sans-serif;
+       font-size: 1.2rem;
+       min-height: 100%;
      }
 
 
-#CBarralateral{
-	height: 100%; 
-	position: fixed; 
-	margin: 5px;
+.corpus > *{
+	box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+	border-radius: 4px;
+	padding: 10px;
+
 }
 
-#Barralateral{
-	margin: 5px; 
-	background-color: #f3c071; 
-	left: 0; 
-	text-align: center; 
-	width: 25%; 
-	border-radius: 10px; 
-	border-color: #efab55;
+.corpus{
+	display: grid;
+	gap: 15px;
+	grid-template:
+		"sidebar"
+		"main"
+		"familia"
+		"carrera"
+		"footer";
 }
 
-#Cuerpo{
-	right: 0px; 
-	top: 0; margin: 7px; 
-	position: fixed; 
-	width: 72%; 
-	background-color: #f3c071; 
-	border-radius: 10px; 
-	border-color: #efab55;
+.sidebar{
+	text-align: center;
+	grid-area: sidebar;
 }
 
-#Contacto{
-	right: 0px; 
-	top: 490px;
-	margin: 7px; 
-	position: fixed; 
-	width: 72%; 
-	background-color: #f3c071; 
-	border-radius: 10px; 
-	border-color: #efab55;
-	z-index: 2;
+.main{
+	grid-area: main;
+}
+
+.familia{
+	grid-area: familia;
+}
+
+.carrera{
+	grid-area: carrera;
+}
+
+.footer{
+	grid-area: footer;
+}
+
+
+@media (min-width: 600px){
+	.corpus{
+		grid-template-areas:
+		"sidebar 	main"
+		"sidebar 	familia"
+		"carrera 	carrera"
+		"footer 	footer";
+		grid-template-columns: 325px auto;
+		grid-auto-rows: auto 100px ;
+	}
+}
+
+@media (min-width: 900px){
+	.corpus{
+		grid-template-areas:
+		"sidebar 	main"
+		"sidebar 	familia"
+		"sidebar 	carrera"
+		"footer 	footer";
+		grid-template-columns: 350px auto;
+		grid-auto-rows: 100px 100px ;
+	}
 }
 
 .Formulario{ 
